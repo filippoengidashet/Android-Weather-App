@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="actionbar">#0a6bcc</color>
+    
+    <color name="white">#ffffff</color>
+    
+    <color name="bg_btn_retrieve">#009f3c</color>
+    
+    <color name="resetDefault">#ff8752</color>
+    
+    <color name="bg">#330038c8</color>
+    
+</resources>
