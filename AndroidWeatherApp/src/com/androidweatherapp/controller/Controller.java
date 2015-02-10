@@ -111,7 +111,7 @@ public class Controller {
 		builder.setTitle("About App Version 1.0");
 		builder.setIcon(R.drawable.ic_about);
 		builder.setMessage("Android Weather App helps people get information"
-				+ " about weather forecast.Android Weather App application allows"
+				+ " about weather forecast. Android Weather App application allows"
 				+ " users to select a city from a list of cities and view weather"
 				+ " forecast for the selected city.");
 
