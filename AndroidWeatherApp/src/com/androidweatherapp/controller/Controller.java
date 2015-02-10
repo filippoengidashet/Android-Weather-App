@@ -14,8 +14,8 @@ import com.androidweatherapp.controller.factory.WeatherForecastFactory;
 import com.androidweatherapp.model.database.Database;
 import com.androidweatherapp.model.model.Setting;
 import com.androidweatherapp.view.R;
-import com.androidweatherapp.view.SettingActivity;
-import com.androidweatherapp.view.WeatherForecastActivity;
+import com.androidweatherapp.view.activity.SettingActivity;
+import com.androidweatherapp.view.activity.WeatherForecastActivity;
 
 public class Controller {
 
@@ -66,14 +66,14 @@ public class Controller {
 		WeatherForecastAbstract forecast = WeatherForecastFactory.getForecast(
 				context, type, weatherForecastInterface, city, numOfDay);
 
-		Log.d("Number of Days: ", ""+numOfDay);
+		Log.d("Number of Days: ", "" + numOfDay);
 
 		forecast.execute();
 	}
 
-	public void setAction(String action) {
+	public void setAction(String action, Context theContext) {
 		if (action.equals("about")) {
-			openAbout();
+			openAbout(theContext);
 		}
 		if (action.equals("settings")) {
 			openSettings();
@@ -96,13 +96,17 @@ public class Controller {
 		weatherDatabase.updateForcastDay(val);
 	}
 
+	public void updateDisplayType(String val) {
+		weatherDatabase.updateDisplayType(val);
+	}
+
 	public void reset() {
 		weatherDatabase.resetDefaultValues();
 	}
 
-	private void openAbout() {
+	private void openAbout(Context mainContext) {
 
-		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		AlertDialog.Builder builder = new AlertDialog.Builder(mainContext);
 
 		builder.setTitle("About App Version 1.0");
 		builder.setIcon(R.drawable.ic_about);

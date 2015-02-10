@@ -8,9 +8,17 @@
 package com.androidweatherapp.view;
 
 public final class R {
-    public static final class anim {
-        public static final int slide_in=0x7f040000;
-        public static final int slide_out=0x7f040001;
+    public static final class animator {
+        public static final int anim_cloud=0x7f040000;
+        public static final int anim_rain=0x7f040001;
+        public static final int anim_sun=0x7f040002;
+        public static final int enter=0x7f040003;
+        public static final int exit=0x7f040004;
+        public static final int slide_in=0x7f040005;
+        public static final int slide_out=0x7f040006;
+    }
+    public static final class array {
+        public static final int displayType=0x7f080000;
     }
     public static final class attr {
     }
@@ -33,87 +41,129 @@ public final class R {
     }
     public static final class drawable {
         public static final int chec_box_on_off=0x7f020000;
-        public static final int ic_about=0x7f020001;
-        public static final int ic_add=0x7f020002;
-        public static final int ic_default=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int ic_refresh=0x7f020005;
-        public static final int ic_settings=0x7f020006;
-        public static final int ic_warning=0x7f020007;
-        public static final int main_bg=0x7f020008;
-        public static final int off=0x7f020009;
-        public static final int on=0x7f02000a;
-        public static final int spash_background=0x7f02000b;
+        public static final int cloud1=0x7f020001;
+        public static final int cloud10=0x7f020002;
+        public static final int cloud2=0x7f020003;
+        public static final int cloud3=0x7f020004;
+        public static final int cloud4=0x7f020005;
+        public static final int cloud5=0x7f020006;
+        public static final int cloud6=0x7f020007;
+        public static final int cloud7=0x7f020008;
+        public static final int cloud8=0x7f020009;
+        public static final int cloud9=0x7f02000a;
+        public static final int ic_about=0x7f02000b;
+        public static final int ic_add=0x7f02000c;
+        public static final int ic_default=0x7f02000d;
+        public static final int ic_launcher=0x7f02000e;
+        public static final int ic_refresh=0x7f02000f;
+        public static final int ic_settings=0x7f020010;
+        public static final int ic_warning=0x7f020011;
+        public static final int main_bg=0x7f020012;
+        public static final int marker=0x7f020013;
+        public static final int marker2=0x7f020014;
+        public static final int off=0x7f020015;
+        public static final int on=0x7f020016;
+        public static final int rain1=0x7f020017;
+        public static final int rain2=0x7f020018;
+        public static final int rain3=0x7f020019;
+        public static final int spash_background=0x7f02001a;
+        public static final int sun1=0x7f02001b;
+        public static final int sun2=0x7f02001c;
+        public static final int sun3=0x7f02001d;
     }
     public static final class id {
-        public static final int action_about=0x7f0a0027;
-        public static final int action_settings=0x7f0a0026;
-        public static final int appWelcomeTitle=0x7f0a001c;
-        public static final int check_on_of=0x7f0a0015;
-        public static final int cityList=0x7f0a001b;
-        public static final int footer=0x7f0a0018;
-        public static final int forecastCelciusAverage=0x7f0a0022;
-        public static final int forecastCurrentCity=0x7f0a0002;
-        public static final int forecastCurrentDescription=0x7f0a0005;
-        public static final int forecastCurrentIcon=0x7f0a0003;
-        public static final int forecastCurrentObservationTime=0x7f0a0006;
-        public static final int forecastCurrentTemp=0x7f0a0004;
-        public static final int forecastDateTxt=0x7f0a000a;
-        public static final int forecastDescripionTxt=0x7f0a0017;
-        public static final int forecastFahAverage=0x7f0a0025;
-        public static final int forecastImgIcon=0x7f0a001f;
-        public static final int forecastListView=0x7f0a0008;
-        public static final int forecastMaxCelcius=0x7f0a0021;
-        public static final int forecastMaxFah=0x7f0a0024;
-        public static final int forecastMinCelcius=0x7f0a0020;
-        public static final int forecastMinFah=0x7f0a0023;
-        public static final int header=0x7f0a0014;
-        public static final int homeObservationTxt=0x7f0a0013;
-        public static final int homeRetrieveBtn=0x7f0a000c;
-        public static final int homeWeatherCelTxt=0x7f0a0010;
-        public static final int homeWeatherCityTxt=0x7f0a0012;
-        public static final int homeWeatherFahTxt=0x7f0a0011;
-        public static final int homeWeatherIconImg=0x7f0a000e;
-        public static final int homeWeatherStatusTxt=0x7f0a000f;
-        public static final int load_textview=0x7f0a001d;
-        public static final int progressBar1=0x7f0a001e;
-        public static final int refreshBtn=0x7f0a0000;
-        public static final int scrollView1=0x7f0a0009;
-        public static final int scrollView2=0x7f0a000d;
-        public static final int settingAddBtn=0x7f0a0019;
-        public static final int settingDaysSpinner=0x7f0a000b;
-        public static final int settingResetBtn=0x7f0a001a;
-        public static final int textView19=0x7f0a0016;
-        public static final int textView4=0x7f0a0001;
-        public static final int textView5=0x7f0a0007;
+        public static final int actionSave=0x7f0b0037;
+        public static final int actionToggle3D=0x7f0b0030;
+        public static final int actionToggleAdjustXLegend=0x7f0b0035;
+        public static final int actionToggleFilter=0x7f0b0036;
+        public static final int actionToggleHighlight=0x7f0b002e;
+        public static final int actionToggleHighlightArrow=0x7f0b002f;
+        public static final int actionTogglePinch=0x7f0b0038;
+        public static final int actionToggleStartzero=0x7f0b0034;
+        public static final int actionToggleValues=0x7f0b002d;
+        public static final int action_about=0x7f0b003a;
+        public static final int action_settings=0x7f0b0039;
+        public static final int animateX=0x7f0b0031;
+        public static final int animateXY=0x7f0b0033;
+        public static final int animateY=0x7f0b0032;
+        public static final int appWelcomeTitle=0x7f0b0018;
+        public static final int chart1=0x7f0b0021;
+        public static final int check_on_of=0x7f0b000f;
+        public static final int cityList=0x7f0b0017;
+        public static final int content=0x7f0b0001;
+        public static final int footer=0x7f0b0014;
+        public static final int forecastCelciusAverage=0x7f0b0029;
+        public static final int forecastCurrentCity=0x7f0b001c;
+        public static final int forecastCurrentDescription=0x7f0b001f;
+        public static final int forecastCurrentIcon=0x7f0b001d;
+        public static final int forecastCurrentObservationTime=0x7f0b0020;
+        public static final int forecastCurrentTemp=0x7f0b001e;
+        public static final int forecastDateTxt=0x7f0b0003;
+        public static final int forecastDescripionTxt=0x7f0b0013;
+        public static final int forecastFahAverage=0x7f0b002c;
+        public static final int forecastImgIcon=0x7f0b0026;
+        public static final int forecastListView=0x7f0b0025;
+        public static final int forecastMaxCelcius=0x7f0b0028;
+        public static final int forecastMaxFah=0x7f0b002b;
+        public static final int forecastMinCelcius=0x7f0b0027;
+        public static final int forecastMinFah=0x7f0b002a;
+        public static final int header=0x7f0b000e;
+        public static final int homeObservationTxt=0x7f0b000d;
+        public static final int homeRetrieveBtn=0x7f0b0005;
+        public static final int homeWeatherCelTxt=0x7f0b000a;
+        public static final int homeWeatherCityTxt=0x7f0b000c;
+        public static final int homeWeatherFahTxt=0x7f0b000b;
+        public static final int homeWeatherIconImg=0x7f0b0008;
+        public static final int homeWeatherStatusTxt=0x7f0b0009;
+        public static final int load_textview=0x7f0b0019;
+        public static final int progressBar1=0x7f0b001a;
+        public static final int refreshBtn=0x7f0b0000;
+        public static final int scrollView1=0x7f0b0002;
+        public static final int seekBar1=0x7f0b0022;
+        public static final int settingAddBtn=0x7f0b0015;
+        public static final int settingDaysSpinner=0x7f0b0004;
+        public static final int settingDisplayTypeSpinner=0x7f0b0012;
+        public static final int settingResetBtn=0x7f0b0016;
+        public static final int textView19=0x7f0b0010;
+        public static final int textView20=0x7f0b0011;
+        public static final int textView4=0x7f0b0023;
+        public static final int textView5=0x7f0b0024;
+        public static final int tvContent=0x7f0b001b;
+        public static final int weatherBgImage=0x7f0b0006;
+        public static final int weatherLayout=0x7f0b0007;
     }
     public static final class layout {
         public static final int activity_forecast=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int activity_settings=0x7f030002;
         public static final int activity_splash=0x7f030003;
-        public static final int weather_forecast_row=0x7f030004;
+        public static final int custom_marker_view=0x7f030004;
+        public static final int fragment_forecast_chart=0x7f030005;
+        public static final int fragment_forecast_list=0x7f030006;
+        public static final int weather_forecast_row=0x7f030007;
     }
     public static final class menu {
-        public static final int main=0x7f090000;
+        public static final int bar=0x7f0a0000;
+        public static final int main=0x7f0a0001;
     }
     public static final class string {
-        public static final int about_app=0x7f070009;
-        public static final int action_settings=0x7f070008;
-        public static final int addCity=0x7f07000d;
+        public static final int about_app=0x7f07000a;
+        public static final int action_settings=0x7f070009;
+        public static final int addCity=0x7f07000e;
         public static final int app_name=0x7f070000;
-        public static final int cityList=0x7f07000f;
+        public static final int cityList=0x7f070010;
         public static final int forecast=0x7f070002;
         public static final int forecastDay=0x7f070004;
-        public static final int hello_world=0x7f07000a;
-        public static final int load=0x7f070007;
-        public static final int refreshForecast=0x7f070005;
-        public static final int resetDefault=0x7f07000e;
-        public static final int retrieve_forecast=0x7f07000c;
-        public static final int select_city=0x7f07000b;
+        public static final int hello_world=0x7f07000b;
+        public static final int load=0x7f070008;
+        public static final int refreshForecast=0x7f070006;
+        public static final int resetDefault=0x7f07000f;
+        public static final int retrieve_forecast=0x7f07000d;
+        public static final int select_city=0x7f07000c;
+        public static final int setDisplay=0x7f070005;
         public static final int settings=0x7f070001;
         public static final int show=0x7f070003;
-        public static final int welcomeTxt=0x7f070006;
+        public static final int welcomeTxt=0x7f070007;
     }
     public static final class style {
         /** 
@@ -141,14 +191,14 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f090000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080001;
-        public static final int DialogAnimation=0x7f080005;
-        public static final int WeatherActionBarTheme=0x7f080003;
-        public static final int WeatherCustomTheme=0x7f080002;
-        public static final int WeatherCustomTheme_ActionBar_TitleTextStyle=0x7f080004;
+        public static final int AppTheme=0x7f090001;
+        public static final int DialogAnimation=0x7f090005;
+        public static final int WeatherActionBarTheme=0x7f090003;
+        public static final int WeatherCustomTheme=0x7f090002;
+        public static final int WeatherCustomTheme_ActionBar_TitleTextStyle=0x7f090004;
     }
 }

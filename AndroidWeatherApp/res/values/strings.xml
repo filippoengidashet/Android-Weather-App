@@ -5,7 +5,14 @@
     <string name="settings">Settings</string>
     <string name="forecast">Weather Forecast Results</string>
     <string name="show">SHOW ICONS:</string>
-    <string name="forecastDay">FORECAST DAY NUMBER:</string>
+    <string name="forecastDay">FORECAST DAY NUMBER: </string>
+    
+    <string name="setDisplay">SET DISPLAY OPTION: </string>
+    <string-array name="displayType">
+        <item>ListView</item>
+        <item>BarChart</item>
+    </string-array>
+    
     <string name="refreshForecast">Refresh Forecast</string>
     
     <string name="welcomeTxt">Android Weather Forecast App</string>

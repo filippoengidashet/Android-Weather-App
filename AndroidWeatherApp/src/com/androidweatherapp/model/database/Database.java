@@ -16,7 +16,7 @@ public class Database extends SQLiteOpenHelper {
 	private static final String DATABASE_NAME = "WeatherForecast.db";
 	private static final String CITY_TABLE_NAME = "cities";
 	private static final String SETTING_TABLE_NAME = "settings";
-	private static final int DATABASE_VERSION = 8;
+	private static final int DATABASE_VERSION = 1;
 	private Setting setting = null;
 	private SQLiteDatabase database = null;
 
@@ -31,6 +31,7 @@ public class Database extends SQLiteOpenHelper {
 			+ "` ("
 			+ "`forecastDayNumber` varchar(100) DEFAULT NULL,"
 			+ "`showIcon` varchar(100) DEFAULT NULL,"
+			+ "`displayType` varchar(100) DEFAULT NULL,"
 			+ "`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP);";
 
 	public Database(Context context) {
@@ -54,8 +55,9 @@ public class Database extends SQLiteOpenHelper {
 					+ "(city) values ('Barcelona')");
 
 			db.execSQL(CREATE_SETTINGS_TABLE);
-			db.execSQL("INSERT INTO " + SETTING_TABLE_NAME
-					+ "(forecastDayNumber, showIcon) values ('5', 'true')");
+			db.execSQL("INSERT INTO "
+					+ SETTING_TABLE_NAME
+					+ "(forecastDayNumber, showIcon, displayType) values ('5', 'true', 'ListView')");
 		} catch (SQLException msg) {
 			Log.d("SQL ERROR", msg.getMessage());
 		}
@@ -73,20 +75,20 @@ public class Database extends SQLiteOpenHelper {
 
 	public Setting getSettings() throws SQLException {
 
-		Log.d("STATUS", "Inside getSetting");
-
 		setting = new Setting();
 		ArrayList<String> cityList = getCityList();
 		setting.setCities(cityList);
 
 		Cursor cur = database.query(true, SETTING_TABLE_NAME, new String[] {
-				"forecastDayNumber", "showIcon" }, null, null, null, null,
-				null, null);
+				"forecastDayNumber", "showIcon", "displayType" }, null, null,
+				null, null, null, null);
 
 		if (cur.moveToNext()) {
 			setting.setForecastDay(cur.getString(cur
 					.getColumnIndex("forecastDayNumber")));
 			setting.setShowIcon(cur.getString(cur.getColumnIndex("showIcon")));
+			setting.setDisplayType(cur.getString(cur
+					.getColumnIndex("displayType")));
 		}
 
 		return setting;
@@ -125,12 +127,17 @@ public class Database extends SQLiteOpenHelper {
 		database.execSQL("UPDATE " + SETTING_TABLE_NAME + " SET showIcon = '"
 				+ bool + "'");
 	}
-	
+
 	public void updateForcastDay(String day) {
-		database.execSQL("UPDATE " + SETTING_TABLE_NAME + " SET forecastDayNumber = '"
-				+ day + "'");
+		database.execSQL("UPDATE " + SETTING_TABLE_NAME
+				+ " SET forecastDayNumber = '" + day + "'");
 	}
-	
+
+	public void updateDisplayType(String displayType) {
+		database.execSQL("UPDATE " + SETTING_TABLE_NAME
+				+ " SET displayType = '" + displayType + "'");
+	}
+
 	public void resetDefaultValues() {
 		database.execSQL("DROP TABLE IF EXISTS " + CITY_TABLE_NAME);
 		database.execSQL("DROP TABLE IF EXISTS " + SETTING_TABLE_NAME);
